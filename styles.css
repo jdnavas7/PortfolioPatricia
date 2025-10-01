@@ -1,0 +1,992 @@
+/* ============================================
+   PATRICIA VARGAS - PORTFOLIO STYLES
+   Portfolio profesional con diseño moderno
+   ============================================ */
+
+/* --------------------------------------------
+   RESET Y CONFIGURACIÓN BASE
+   -------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------
+   VARIABLES CSS (Tema Claro)
+   -------------------------------------------- */
+:root {
+    /* Colores de fondo */
+    --bg-primary: #f5f5f5;
+    --bg-secondary: white;
+    
+    /* Colores de texto */
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-tertiary: #999;
+    
+    /* Otros */
+    --border-color: #e0e0e0;
+    --shadow: rgba(0,0,0,0.1);
+    --header-bg: #2c3e50;
+    --header-text: #ecf0f1;
+}
+
+/* --------------------------------------------
+   VARIABLES CSS (Tema Oscuro)
+   -------------------------------------------- */
+body.dark-mode {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --text-tertiary: #808080;
+    --border-color: #404040;
+    --shadow: rgba(0,0,0,0.4);
+    --header-bg: #1c2833;
+    --header-text: #ecf0f1;
+}
+
+/* --------------------------------------------
+   ESTILOS GLOBALES DEL BODY
+   -------------------------------------------- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f0f4f8;
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+    /* Fondo con patrón de moléculas y fitness */
+    background-image: 
+        /* Círculos pequeños simulando átomos/moléculas */
+        radial-gradient(circle at 20% 30%, rgba(70, 130, 180, 0.03) 2px, transparent 2px),
+        radial-gradient(circle at 80% 70%, rgba(70, 130, 180, 0.03) 2px, transparent 2px),
+        radial-gradient(circle at 50% 50%, rgba(70, 130, 180, 0.02) 1px, transparent 1px),
+        radial-gradient(circle at 10% 80%, rgba(70, 130, 180, 0.03) 2px, transparent 2px),
+        radial-gradient(circle at 90% 20%, rgba(70, 130, 180, 0.03) 2px, transparent 2px),
+        /* Líneas que conectan átomos */
+        linear-gradient(45deg, transparent 48%, rgba(70, 130, 180, 0.02) 49%, rgba(70, 130, 180, 0.02) 51%, transparent 52%),
+        linear-gradient(135deg, transparent 48%, rgba(70, 130, 180, 0.02) 49%, rgba(70, 130, 180, 0.02) 51%, transparent 52%),
+        /* Fondo base */
+        linear-gradient(to bottom, #f0f4f8, #e8f0f7);
+    background-size: 
+        200px 200px,
+        200px 200px,
+        200px 200px,
+        200px 200px,
+        200px 200px,
+        100px 100px,
+        100px 100px,
+        100% 100%;
+    background-position: 
+        0 0,
+        50px 50px,
+        100px 25px,
+        25px 150px,
+        150px 75px,
+        0 0,
+        0 0,
+        0 0;
+}
+
+/* Fondo para modo oscuro */
+body.dark-mode {
+    background: #1a1a1a;
+    background-image: 
+        /* Círculos pequeños simulando átomos/moléculas */
+        radial-gradient(circle at 20% 30%, rgba(70, 130, 180, 0.05) 2px, transparent 2px),
+        radial-gradient(circle at 80% 70%, rgba(70, 130, 180, 0.05) 2px, transparent 2px),
+        radial-gradient(circle at 50% 50%, rgba(70, 130, 180, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 10% 80%, rgba(70, 130, 180, 0.05) 2px, transparent 2px),
+        radial-gradient(circle at 90% 20%, rgba(70, 130, 180, 0.05) 2px, transparent 2px),
+        /* Líneas que conectan átomos */
+        linear-gradient(45deg, transparent 48%, rgba(70, 130, 180, 0.03) 49%, rgba(70, 130, 180, 0.03) 51%, transparent 52%),
+        linear-gradient(135deg, transparent 48%, rgba(70, 130, 180, 0.03) 49%, rgba(70, 130, 180, 0.03) 51%, transparent 52%),
+        /* Fondo base oscuro con gradiente sutil */
+        linear-gradient(to bottom, #1a1a1a, #1f2937);
+    background-size: 
+        200px 200px,
+        200px 200px,
+        200px 200px,
+        200px 200px,
+        200px 200px,
+        100px 100px,
+        100px 100px,
+        100% 100%;
+    background-position: 
+        0 0,
+        50px 50px,
+        100px 25px,
+        25px 150px,
+        150px 75px,
+        0 0,
+        0 0,
+        0 0;
+}
+
+/* ============================================
+   HEADER (Barra superior fija)
+   ============================================ */
+.header {
+    background: var(--header-bg);
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+}
+
+/* Logo y título */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--header-text);
+    letter-spacing: -0.5px;
+}
+
+.header-divider {
+    width: 1px;
+    height: 30px;
+    background: rgba(255,255,255,0.2);
+}
+
+.header-title {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 400;
+}
+
+/* Botones del header */
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Botón Descargar CV */
+.download-cv-btn {
+    background: linear-gradient(135deg, #6b8e23, #556b2f);
+    color: white;
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.download-cv-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(107, 142, 35, 0.4);
+}
+
+/* Botón modo oscuro */
+.dark-mode-toggle {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    color: var(--header-text);
+}
+
+.dark-mode-toggle:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   VENTANA FLOTANTE DE LINKEDIN
+   ============================================ */
+.floating-card {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--bg-secondary);
+    padding: 1.3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px var(--shadow);
+    z-index: 99;
+    text-align: center;
+    max-width: 240px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: 2px solid var(--border-color);
+}
+
+/* Estado oculto */
+.floating-card.hidden {
+    transform: translateY(150px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.floating-card h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.floating-card p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+/* Botón LinkedIn */
+.linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #0077b5;
+    color: white;
+    padding: 0.6rem 1.3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,119,181,0.3);
+    font-size: 0.9rem;
+}
+
+.linkedin-btn:hover {
+    background: #006399;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,119,181,0.4);
+}
+
+.linkedin-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Botón cerrar ventana */
+.close-floating {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--text-tertiary);
+    transition: color 0.3s;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-floating:hover {
+    color: var(--text-primary);
+    background: var(--bg-primary);
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 2rem 2rem;
+}
+
+/* ============================================
+   SECCIÓN HERO (Foto + Contenido)
+   ============================================ */
+.hero-section {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 4rem;
+}
+
+/* Contenedor de foto de perfil (sticky) */
+.profile-image-wrapper {
+    position: sticky;
+    top: 120px;
+}
+
+/* Foto de perfil circular */
+.profile-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6d6d6d 0%, #4a4a4a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    color: white;
+    font-weight: 300;
+    box-shadow: 0 10px 40px var(--shadow);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-initials {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Botones de navegación debajo de la foto */
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Colores de los botones de navegación */
+.nav-btn.green {
+    background: linear-gradient(135deg, #6b8e23, #556b2f);
+    color: white;
+}
+
+.nav-btn.orange {
+    background: linear-gradient(135deg, #ff8c00, #cc7000);
+    color: white;
+}
+
+.nav-btn.blue {
+    background: linear-gradient(135deg, #4682b4, #36648b);
+    color: white;
+}
+
+.nav-btn.gray {
+    background: linear-gradient(135deg, #888888, #666666);
+    color: white;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ============================================
+   SECCIÓN DE CONTENIDO
+   ============================================ */
+.content-section {
+    background: var(--bg-secondary);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: background 0.3s;
+}
+
+/* Título principal (nombre) */
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+}
+
+/* Títulos de sección con gradiente */
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 3.5rem 0 2rem;
+    color: white;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    letter-spacing: -0.5px;
+}
+
+/* Colores de los títulos de sección */
+.section-title.green {
+    background: linear-gradient(135deg, #6b8e23, #556b2f);
+}
+
+.section-title.orange {
+    background: linear-gradient(135deg, #ff8c00, #cc7000);
+}
+
+.section-title.blue {
+    background: linear-gradient(135deg, #4682b4, #36648b);
+}
+
+.section-title.gray {
+    background: linear-gradient(135deg, #888888, #666666);
+}
+
+/* Texto introductorio */
+.intro-text {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* ============================================
+   TARJETAS DE EXPERIENCIA Y FORMACIÓN
+   ============================================ */
+.job-item, 
+.education-item {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo naranja claro para experiencia laboral */
+.job-item {
+    background: rgba(255, 140, 0, 0.12);
+}
+
+/* Fondo azul claro para formación académica */
+.education-item {
+    background: rgba(70, 130, 180, 0.12);
+}
+
+/* Fondos en modo oscuro */
+body.dark-mode .job-item {
+    background: rgba(255, 140, 0, 0.15);
+}
+
+body.dark-mode .education-item {
+    background: rgba(70, 130, 180, 0.15);
+}
+
+/* Eliminar borde del último elemento */
+.job-item:last-child, 
+.education-item:last-child {
+    border-bottom: none;
+}
+
+/* Efecto de brillo al pasar el cursor */
+.job-item::before, 
+.education-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(150, 150, 150, 0.05), transparent);
+    transition: left 0.6s;
+}
+
+.job-item:hover::before, 
+.education-item:hover::before {
+    left: 100%;
+}
+
+/* Efecto hover en las tarjetas */
+.job-item:hover, 
+.education-item:hover {
+    transform: translateX(10px);
+    background: linear-gradient(135deg, rgba(240, 240, 240, 0.3), rgba(250, 250, 250, 0.3));
+    box-shadow: -5px 5px 15px var(--shadow);
+    border-left: 4px solid #808080;
+    filter: grayscale(0);
+}
+
+/* Hover en modo oscuro */
+body.dark-mode .job-item:hover,
+body.dark-mode .education-item:hover {
+    background: linear-gradient(135deg, rgba(60, 60, 60, 0.3), rgba(80, 80, 80, 0.3));
+}
+
+/* Filtro de escala de grises por defecto */
+.job-item, 
+.education-item {
+    filter: grayscale(0.2);
+}
+
+/* Remover filtro al hacer hover */
+.job-item:hover, 
+.education-item:hover {
+    filter: grayscale(0);
+}
+
+/* Título del trabajo/formación */
+.job-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+/* Nombre de la empresa/institución */
+.job-company {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+/* Período de tiempo */
+.job-period {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Descripción del puesto */
+.job-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ============================================
+   INFORMACIÓN DE CONTACTO
+   ============================================ */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-tertiary);
+}
+
+/* ============================================
+   GRID DE HABILIDADES
+   ============================================ */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.skill-item {
+    padding: 1.5rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.skill-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.skill-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   INFORMACIÓN ADICIONAL (Badges)
+   ============================================ */
+.extras-section {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.extra-badge {
+    flex: 1;
+    padding: 2rem;
+    background: linear-gradient(135deg, #a8a8a8, #8a8a8a);
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.extra-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.extra-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+}
+
+/* ============================================
+   CUADROS HOVER (Sobre Mí)
+   ============================================ */
+.hover-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.hover-box {
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo */
+.hover-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(140, 156, 140, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.hover-box:hover::before {
+    left: 100%;
+}
+
+/* Efecto hover */
+.hover-box:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px var(--shadow);
+    border-color: #6b8e23;
+    background: linear-gradient(135deg, rgba(107, 142, 35, 0.1), rgba(70, 130, 180, 0.1));
+}
+
+.hover-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+/* Animación del icono al hover */
+.hover-box:hover .hover-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.hover-box h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.hover-box p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 3rem 2rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.footer-section p {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* Enlaces del footer */
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* Iconos sociales */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+/* Footer inferior (copyright) */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET (1024px)
+   ============================================ */
+@media (max-width: 1024px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .profile-image-wrapper {
+        position: relative;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image {
+        width: 280px;
+        height: 280px;
+        font-size: 6rem;
+    }
+
+    .header-container {
+        padding: 1rem 2rem;
+    }
+
+    .container {
+        padding: 100px 1.5rem 1.5rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MÓVIL GRANDE (768px)
+   ============================================ */
+@media (max-width: 768px) {
+    /* Ventana flotante de LinkedIn */
+    .floating-card {
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        max-width: none;
+        padding: 1.2rem;
+    }
+
+    .floating-card h3 {
+        font-size: 1rem;
+    }
+
+    .floating-card p {
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .linkedin-btn {
+        padding: 0.5rem 1.1rem;
+        font-size: 0.85rem;
+    }
+
+    .linkedin-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Botones de navegación en grid 2x2 */
+    .nav-buttons {
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+    }
+
+    .nav-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* Footer en una columna */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MÓVIL (640px)
+   ============================================ */
+@media (max-width: 640px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .profile-image {
+        width: 220px;
+        height: 220px;
+        font-size: 5rem;
+    }
+
+    .content-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .extras-section {
+        flex-direction: column;
+    }
+
+    .header-left {
+        gap: 1rem;
+    }
+
+    .header-divider {
+        display: none;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .header-title {
+        font-size: 0.75rem;
+    }
+
+    .header-actions {
+        gap: 0.5rem;
+    }
+
+    .download-cv-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    .dark-mode-toggle {
+        padding: 0.5rem 0.8rem;
+        font-size: 1rem;
+    }
+
+    /* Habilidades y cuadros en una columna */
+    .hover-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}

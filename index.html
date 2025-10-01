@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio profesional de Patricia Vargas - Técnico Superior en Enseñanza y Animación Sociodeportiva">
+    <meta name="author" content="Patricia Vargas">
+    <title>Patricia Vargas - Portfolio Profesional</title>
+    
+    <!-- Enlace a la hoja de estilos externa -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- ============================================
+         HEADER - Barra superior fija
+         ============================================ -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo y título -->
+            <div class="header-left">
+                <div class="logo">Patricia Vargas Vázquez</div>
+                <div class="header-divider"></div>
+                <div class="header-title">Monitora Sociodeportiva & Fitness</div>
+            </div>
+            
+            <!-- Botones de acción -->
+            <div class="header-actions">
+                <!-- Botón Descargar CV -->
+                <a href="https://drive.google.com/file/d/1No4NSh_W5d9eDU-bOAH2WMQZ16sCcBqX/view?usp=sharing" class="download-cv-btn" download>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Descargar CV
+                </a>
+                
+                <!-- Botón modo oscuro -->
+                <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+                    <span id="modeIcon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         VENTANA FLOTANTE DE LINKEDIN
+         Aparece después de hacer scroll
+         ============================================ -->
+    <div class="floating-card" id="floatingCard">
+        <button class="close-floating" onclick="closeFloatingCard()">×</button>
+        <h3>¿Conocerme más?</h3>
+        <p>Conéctate en LinkedIn</p>
+        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" class="linkedin-btn">
+            <svg class="linkedin-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            Conectar
+        </a>
+    </div>
+
+    <!-- ============================================
+         CONTENEDOR PRINCIPAL
+         ============================================ -->
+    <div class="container">
+        
+        <!-- ============================================
+             SECCIÓN HERO - Foto de perfil + Contenido
+             ============================================ -->
+        <div class="hero-section">
+            
+            <!-- Columna izquierda: Foto y botones de navegación -->
+            <div class="profile-image-wrapper">
+                <!-- Foto de perfil circular -->
+                <div class="profile-image">
+                    <span class="profile-initials" id="initials" style="display:none;">PV</span>
+                    <img id="profileImg" src="assets/IMG_5464.JPEG" alt="Patricia Vargas" style="display: block;">
+                </div>
+                
+                <!-- Botones de navegación rápida -->
+                <div class="nav-buttons">
+                    <a href="#sobre-mi" class="nav-btn green">Sobre Mí</a>
+                    <a href="#experiencia" class="nav-btn orange">Experiencia</a>
+                    <a href="#formacion" class="nav-btn blue">Formación</a>
+                    <a href="#contacto" class="nav-btn gray">Contacto</a>
+                </div>
+            </div>
+
+            <!-- Columna derecha: Contenido principal -->
+            <div class="content-section">
+                
+                <!-- Título principal -->
+                <h1 class="main-title" id="sobre-mi">Patricia Vargas</h1>
+                
+                <!-- ============================================
+                     SECCIÓN: SOBRE MÍ
+                     ============================================ -->
+                <h2 class="section-title green">Sobre Mí</h2>
+                <div class="intro-text">
+                    <p>
+                        Soy una profesional graduada en Técnico Superior en Enseñanza y Animación Sociodeportiva. 
+                        Actualmente trabajo como técnico multifuncional en instalaciones deportivas, donde aplico mis 
+                        conocimientos en animación sociodeportiva para optimizar la gestión de actividades y la 
+                        experiencia de los usuarios.
+                    </p>
+                    <p>
+                        Persona motivada en todos los ámbitos de trabajo con rápido aprendizaje y muchas ganas de 
+                        seguir aumentando mi experiencia laboral.
+                    </p>
+                </div>
+
+                <!-- Cuadros con características personales -->
+                <div class="hover-boxes">
+                    <div class="hover-box">
+                        <div class="hover-icon">🎯</div>
+                        <h3>Profesionalidad</h3>
+                        <p>Compromiso y dedicación en cada proyecto</p>
+                    </div>
+                    <div class="hover-box">
+                        <div class="hover-icon">⚡</div>
+                        <h3>Dinamismo</h3>
+                        <p>Energía y entusiasmo en todas las actividades</p>
+                    </div>
+                    <div class="hover-box">
+                        <div class="hover-icon">🤝</div>
+                        <h3>Trabajo en Equipo</h3>
+                        <p>Colaboración y comunicación efectiva</p>
+                    </div>
+                    <div class="hover-box">
+                        <div class="hover-icon">🌟</div>
+                        <h3>Creatividad</h3>
+                        <p>Soluciones innovadoras y originales</p>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     SECCIÓN: EXPERIENCIA LABORAL
+                     ============================================ -->
+                <h2 class="section-title orange" id="experiencia">Experiencia Laboral</h2>
+
+                <!-- Puesto 1 -->
+                <div class="job-item">
+                    <div class="job-title">Técnico Multifuncional</div>
+                    <div class="job-company">ÁndaluSport XXI Huelva, S.L</div>
+                    <div class="job-period">2021-2022, 2023-Actualidad</div>
+                    <div class="job-description">
+                        Gestión integral de instalaciones deportivas incluyendo coordinación de actividades, 
+                        supervisión de equipos, atención al usuario y mantenimiento de espacios deportivos. 
+                        Implementación de sistemas de gestión y optimización de recursos.
+                    </div>
+                </div>
+
+                <!-- Puesto 2 -->
+                <div class="job-item">
+                    <div class="job-title">Monitora Fitness</div>
+                    <div class="job-company">Acciona Facility Services S.A</div>
+                    <div class="job-period">2022</div>
+                    <div class="job-description">
+                        Dirección y supervisión de clases de fitness, entrenamiento personalizado y programación 
+                        de rutinas adaptadas a diferentes niveles. Asesoramiento nutricional básico y seguimiento 
+                        de objetivos individuales.
+                    </div>
+                </div>
+
+                <!-- Puesto 3 -->
+                <div class="job-item">
+                    <div class="job-title">Monitora en Comedor Escolar</div>
+                    <div class="job-company">Aramark Servicios de Catering S.L</div>
+                    <div class="job-period">2020-2022</div>
+                    <div class="job-description">
+                        Supervisión y cuidado de menores durante el horario de comedor escolar. Promoción de 
+                        hábitos alimenticios saludables y gestión de actividades recreativas durante el tiempo libre.
+                    </div>
+                </div>
+
+                <!-- Puesto 4 -->
+                <div class="job-item">
+                    <div class="job-title">Monitora de Actividades Extraescolares y Voluntarias</div>
+                    <div class="job-company">Centro de Técnicos Deportivos Al-Ándalus S.L.U</div>
+                    <div class="job-period">2019-2021</div>
+                    <div class="job-description">
+                        Planificación y ejecución de programas de actividades extraescolares deportivas y recreativas. 
+                        Desarrollo de proyectos de voluntariado y coordinación con familias y centros educativos.
+                    </div>
+                </div>
+
+                <!-- Puesto 5 -->
+                <div class="job-item">
+                    <div class="job-title">Empleada de Sala de Juegos y Afines</div>
+                    <div class="job-company">Maural Comercio S.L</div>
+                    <div class="job-period">2019-2021</div>
+                    <div class="job-description">
+                        Atención al público en sala de juegos recreativos. Gestión de actividades lúdicas, 
+                        mantenimiento de equipos y creación de experiencias positivas para los usuarios.
+                    </div>
+                </div>
+
+                <!-- Puesto 6 -->
+                <div class="job-item">
+                    <div class="job-title">Monitora de Campamentos</div>
+                    <div class="job-company">Querkus, Aventura-Ocio y Viajes, S.L</div>
+                    <div class="job-period">2019</div>
+                    <div class="job-description">
+                        Organización y dinamización de campamentos de verano. Supervisión de grupos, implementación 
+                        de actividades de aventura en entorno natural y garantía de la seguridad de los participantes.
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     SECCIÓN: FORMACIÓN ACADÉMICA
+                     ============================================ -->
+                <h2 class="section-title blue" id="formacion">Formación Académica</h2>
+
+                <!-- Formación 1 (Actual) -->
+                <div class="education-item">
+                    <div class="job-title">Técnico Superior en Química Industrial</div>
+                    <div class="job-company">Actualmente cursando</div>
+                    <div class="job-period">2024-Actualidad</div>
+                    <div class="job-description">
+                        Formación en curso especializada en procesos químicos industriales, control de calidad, 
+                        seguridad en laboratorios y plantas industriales, análisis químico y gestión de procesos 
+                        productivos del sector químico.
+                    </div>
+                </div>
+
+                <!-- Formación 2 -->
+                <div class="education-item">
+                    <div class="job-title">Técnico Superior en Enseñanza y Animación Sociodeportiva (T.S.E.A.S)</div>
+                    <div class="job-company">Centros Al-Ándalus "Colegio La Hispanidad"</div>
+                    <div class="job-period">2018-2020</div>
+                    <div class="job-description">
+                        Formación superior especializada en la programación, organización, desarrollo y evaluación 
+                        de actividades de animación físico-deportiva y recreativa. Incluye competencias en gestión 
+                        de grupos, primeros auxilios y metodologías de enseñanza deportiva.
+                    </div>
+                </div>
+
+                <!-- Formación 3 -->
+                <div class="education-item">
+                    <div class="job-title">Técnico en Conducción de Actividades Físico-Deportivas en el Medio Natural (T.E.C.O)</div>
+                    <div class="job-company">Centros Al-Ándalus "Colegio La Hispanidad"</div>
+                    <div class="job-period">2016-2018</div>
+                    <div class="job-description">
+                        Especialización en organización y conducción de actividades deportivas en entornos naturales. 
+                        Conocimientos en senderismo, orientación, escalada, actividades acuáticas y gestión de riesgos 
+                        en espacios naturales.
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     SUBSECCIÓN: CERTIFICACIONES
+                     ============================================ -->
+                <h2 class="section-title blue">Certificaciones</h2>
+
+                <div class="education-item">
+                    <div class="job-title">Socorrista Acuático</div>
+                    <div class="job-company">Centros Al-Ándalus "Colegio La Hispanidad"</div>
+                    <div class="job-period">2020</div>
+                    <div class="job-description">
+                        Certificación oficial en socorrismo acuático, técnicas de salvamento, primeros auxilios, 
+                        RCP y DEA. Capacitación para la vigilancia y seguridad en instalaciones acuáticas.
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     SECCIÓN: HABILIDADES Y COMPETENCIAS
+                     ============================================ -->
+                <h2 class="section-title green">Habilidades y Competencias</h2>
+
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">🏃‍♀️</div>
+                        <div class="skill-name">Animación Deportiva</div>
+                        <div class="skill-desc">Planificación y dinamización de actividades</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">👥</div>
+                        <div class="skill-name">Gestión de Grupos</div>
+                        <div class="skill-desc">Liderazgo y trabajo con menores</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">💪</div>
+                        <div class="skill-name">Entrenamiento</div>
+                        <div class="skill-desc">Fitness y preparación física</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🏕️</div>
+                        <div class="skill-name">Medio Natural</div>
+                        <div class="skill-desc">Actividades outdoor y aventura</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🌊</div>
+                        <div class="skill-name">Socorrismo</div>
+                        <div class="skill-desc">Primeros auxilios y salvamento</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">⚡</div>
+                        <div class="skill-name">Adaptabilidad</div>
+                        <div class="skill-desc">Aprendizaje rápido y versátil</div>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     SECCIÓN: INFORMACIÓN ADICIONAL
+                     ============================================ -->
+                <h2 class="section-title gray">Información Adicional</h2>
+
+                <div class="extras-section">
+                    <div class="extra-badge">
+                        <div class="extra-icon">🚗</div>
+                        <div><strong>Vehículo Propio</strong></div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Disponibilidad inmediata</div>
+                    </div>
+                    <div class="extra-badge">
+                        <div class="extra-icon">🪪</div>
+                        <div><strong>Carnet de Conducir B</strong></div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Movilidad garantizada</div>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     SECCIÓN: CONTACTO
+                     ============================================ -->
+                <h2 class="section-title gray" id="contacto">Contacto</h2>
+
+                <div class="contact-info">
+                    <!-- Email -->
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <div>
+                            <strong>Email</strong><br>
+                            patriciavarvaz@gmail.com
+                        </div>
+                    </div>
+                    
+                    <!-- Teléfono -->
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <div>
+                            <strong>Teléfono</strong><br>
+                            +34 622 23 40 50
+                        </div>
+                    </div>
+                    
+                    <!-- Ubicación -->
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <div>
+                            <strong>Ubicación</strong><br>
+                            Huelva, 21005
+                        </div>
+                    </div>
+                </div>
+                
+            </div> <!-- Fin content-section -->
+        </div> <!-- Fin hero-section -->
+    </div> <!-- Fin container -->
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="footer-content">
+            
+            <!-- Columna 1: Sobre Patricia -->
+            <div class="footer-section">
+                <h3>Patricia Vargas</h3>
+                <p>
+                    Técnico Superior en Enseñanza y Animación Sociodeportiva comprometida con la 
+                    excelencia en cada actividad.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" class="social-link">
+                        <svg class="social-icon" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:patriciavarvaz@gmail.com" class="social-link">
+                        <svg class="social-icon" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
+                    <a href="tel:+34622234050" class="social-link">
+                        <svg class="social-icon" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Columna 2: Enlaces rápidos -->
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#formacion">Formación</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <!-- Columna 3: Especialidades -->
+            <div class="footer-section">
+                <h3>Especialidades</h3>
+                <ul class="footer-links">
+                    <li>Animación Sociodeportiva</li>
+                    <li>Fitness y Entrenamiento</li>
+                    <li>Actividades en Medio Natural</li>
+                    <li>Socorrismo Acuático</li>
+                </ul>
+            </div>
+            
+            <!-- Columna 4: Información de contacto -->
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>patriciavarvaz@gmail.com</p>
+                <p>+34 622 23 40 50</p>
+                <p>Huelva, 21005</p>
+            </div>
+            
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; Desarrollado por Jesús David Navas, contacto <b>jesusdavidnavaswork@gmail.com</b> - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        /* ============================================
+           PATRICIA VARGAS - PORTFOLIO JAVASCRIPT
+           Funcionalidades interactivas del portfolio
+           ============================================ */
+
+        /* --------------------------------------------
+           MODO OSCURO
+           Cambia entre tema claro y oscuro
+           -------------------------------------------- */
+        function toggleDarkMode() {
+            // Alternar clase 'dark-mode' en el body
+            document.body.classList.toggle('dark-mode');
+            
+            // Obtener el icono del botón
+            const icon = document.getElementById('modeIcon');
+            
+            // Verificar si el modo oscuro está activo
+            const isDark = document.body.classList.contains('dark-mode');
+            
+            // Cambiar el icono según el modo
+            icon.textContent = isDark ? '☀️' : '🌙';
+            
+            // Guardar preferencia en memoria (no localStorage)
+            window.darkModePreference = {
+                darkMode: isDark,
+                timestamp: Date.now()
+            };
+        }
+
+        /* --------------------------------------------
+           CARGAR PREFERENCIA DE MODO OSCURO
+           Se ejecuta al cargar la página
+           -------------------------------------------- */
+        if (window.darkModePreference?.darkMode) {
+            document.body.classList.add('dark-mode');
+            document.getElementById('modeIcon').textContent = '☀️';
+        }
+
+        /* --------------------------------------------
+           VENTANA FLOTANTE DE LINKEDIN
+           -------------------------------------------- */
+
+        /**
+         * Cerrar la ventana flotante de LinkedIn
+         */
+        function closeFloatingCard() {
+            document.getElementById('floatingCard').classList.add('hidden');
+        }
+
+        /**
+         * Mostrar ventana flotante después de hacer scroll
+         * Se muestra una sola vez cuando el usuario hace scroll de 300px
+         */
+        let hasShownCard = false;
+
+        window.addEventListener('scroll', () => {
+            if (!hasShownCard && window.scrollY > 300) {
+                document.getElementById('floatingCard').classList.remove('hidden');
+                hasShownCard = true;
+            }
+        });
+
+        /* --------------------------------------------
+           SMOOTH SCROLL
+           Navegación suave entre secciones
+           -------------------------------------------- */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Obtener el elemento destino
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                if (target) {
+                    // Calcular posición con offset para el header fijo
+                    const offset = 100;
+                    const targetPosition = target.offsetTop - offset;
+                    
+                    // Hacer scroll suave
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        /* --------------------------------------------
+           SOMBRA DINÁMICA DEL HEADER
+           Aumenta la sombra al hacer scroll
+           -------------------------------------------- */
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            
+            if (window.scrollY > 20) {
+                // Sombra más pronunciada al hacer scroll
+                header.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
+            } else {
+                // Sombra normal en la parte superior
+                header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+            }
+        });
+    </script>
+    
+</body>
+</html>
